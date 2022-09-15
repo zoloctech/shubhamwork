@@ -8,34 +8,34 @@ import { Redirect } from "react-router-dom";
 import LoginFrom from "../component/Auth/LoginFrom";
 let userrole = localStorage.getItem(TOKEN);
 var sidenav = [];
-// if(userrole === null){
 if (userrole === "admin") {
   sidenav = [
-    { name: "admin", label: "admin", link: "/admin" },
-    { name: "admindata", label: "admindata", link: "/admindata" },
-    { name: "admindataadd", label: "admindataadd", link: "/admindataadd" },
+    { name: "Dashboard", label: "Dashboard", link: "/dashboard-admin" },
+    { name: "CreateDoctorLocation", label: "Doctor-Location", link: "/create-doctor-location" }
   ];
 } else if (userrole === "doctor") {
   sidenav = [
-    { name: "doctor", label: "doctor", link: "/doctor" },
-    { name: "doctordata", label: "doctordata", link: "/doctordata" },
-    { name: "doctordataadd", label: "doctordataadd", link: "/doctordataadd" },
+    { name: "Dashboard", label: "Dashboard", link: "/dashboard-doctor" },
+    { name: "Doctor-List", label: "Doctor-List", link: "/view-all-doctor" },
+    { name: "Take-Appointment", label: "Take-Appointment", link: "/take-appointment" }
+
   ];
 } else if (userrole === "user") {
   sidenav = [
-    { name: "user", label: "user", link: "/user" },
-    { name: "adduser", label: "adduser", link: "/adduser" },
-    { name: "userdata", label: "userdata", link: "/userdata" },
+    { name: "Dashboard", label: "Dashboard", link: "/dashboard-user" },
+    { name: "Patients", label: "Patients", link: "/patient-user" },
+    { name: "Book Appoinments", label: "Book Appoinments", link: "/book-appoinment" },
+    { name: "Take Appoinments", label: "Take Appoinments", link: "/take-appoinment" },
+    { name: "Doctor Timing", label: "Doctor Timing", link: "/doctor-timing" },
+    { name: "Doctor Rating", label: "Doctor Rating", link: "/doctor-rating" },
+
   ];
 }
-// }else{
-//   <Redirect to="/"/>
-// }
 
 function Main() {
   return (
     <>
-      <Mainsection />
+     
       {userrole === null ? (<>
       <LoginFrom/>
       </>) :(
@@ -44,6 +44,7 @@ function Main() {
         <Sidebar sidenav={sidenav}/>
        </>
        )}
+        <Mainsection />
     
     </>
   );

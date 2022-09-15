@@ -7,14 +7,15 @@ import  {TOKEN}  from '../../InnerComponent/Route/index';
 const PublicRoute = ({ component: Component, restricted, ...rest }) => {
 
 	let userrole = localStorage.getItem(TOKEN);
+	console.log(userrole)
 	let redirectRoute = '';
 	if (userrole === 'admin') {
-		redirectRoute = "/admin"	
+		redirectRoute = "/dashboard-admin"	
 	}else if (userrole === 'user') {
-		redirectRoute = "/user"
+		redirectRoute = "/dashboard-user"
 	}else if (userrole === 'doctor'){
-		redirectRoute = "/doctor"
-	}else{
+		redirectRoute = "/dashboard-doctor"
+	}else if(userrole === null){
 		redirectRoute ="/"
 	}
 	
