@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { colors, device } from "../../styles/settings";
+import styled, { css } from 'styled-components';
+import { colors, device } from '../../styles/settings';
 
 export function UploadFileStyle({ color, fullWidth }) {
   return css`
@@ -15,13 +15,13 @@ export function UploadFileStyle({ color, fullWidth }) {
       cursor: pointer;
       background-color: transparent;
       color: ${props => props.theme.primary};
-      border-color: ${props => color === "secondary" && props.theme.primary};
+      border-color: ${props => color === 'secondary' && props.theme.primary};
       padding: 8px 30px;
       font-size: 16px;
       line-height: 22px;
       border-radius: 21px;
       border-width: 2px;
-      ${fullWidth && "width: 100%"};
+      ${fullWidth && 'width: 100%'};
       transition: padding 0.2s;
 
       &:hover {
@@ -43,7 +43,7 @@ export function UploadFileStyle({ color, fullWidth }) {
       &:focus {
         outline: 0;
         &:after {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           top: -6px;
@@ -69,7 +69,7 @@ export function UploadFileStyle({ color, fullWidth }) {
       }
     }
 
-    input[type="file"] {
+    input[type='file'] {
       position: absolute;
       left: -9999px;
       opacity: 0;

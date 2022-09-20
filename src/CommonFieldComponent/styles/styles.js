@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import { device, fontSize, colors } from "./settings";
+import { device, fontSize, colors } from './settings';
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -165,7 +165,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .btn-reset {
     margin-right: 20px;
-    ${fontSize("14px", "20px")};
+    ${fontSize('14px', '20px')};
 
     @media ${device.mobile} {
       align-self: center;
@@ -178,7 +178,7 @@ export const GlobalStyles = createGlobalStyle`
       display: flex;
       align-items: center;
       text-transform: uppercase;
-      ${fontSize("14px", "14px")};
+      ${fontSize('14px', '14px')};
       color: ${colors.color2};
 
       &__icon {

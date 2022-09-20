@@ -10,13 +10,13 @@ const PublicRoute = ({ component: Component, restricted, ...rest }) => {
 	console.log(userrole)
 	let redirectRoute = '';
 	if (userrole === 'admin') {
-		redirectRoute = "/dashboard-admin"	
+		redirectRoute = '/dashboard-admin'	
 	}else if (userrole === 'user') {
-		redirectRoute = "/dashboard-user"
+		redirectRoute = '/dashboard-user'
 	}else if (userrole === 'doctor'){
-		redirectRoute = "/dashboard-doctor"
+		redirectRoute = '/dashboard-doctor'
 	}else if(userrole === null){
-		redirectRoute ="/"
+		redirectRoute ='/'
 	}
 	
 	return (

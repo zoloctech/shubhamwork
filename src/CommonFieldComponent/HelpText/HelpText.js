@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { HelpTextWraperStyle } from "./HelpText.style";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { HelpTextWraperStyle } from './HelpText.style';
 
 const HelpText = ({ text, className }) => {
   return (

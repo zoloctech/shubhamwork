@@ -32041,20 +32041,36 @@ img.away, img.busy, img.offline, img.online {
 }
 
 /* ========================= */
-.css-1s2u09g-control {
-  width: 240px !important;
-  cursor: default;
-  display: flex;
-  justify-content: space-between;
-  min-height: 38px;
-  outline: 0!important;
-  position: relative;
+/* .css-1s2u09g-control .css-319lph-ValueContainer  .css-14el2xx-placeholder {
+  font-family: 'sans-serif';
+  font-size: '30px';
+  min-height: '38px !important';
+  width: '240px !important';
+  background-color: 'white';
+  border: '1px solid hsl(0, 0%, 70%)';
+  border-radius : '5px';
+  font-size: '14px';
+  font-family: 'sans-serif';
+  margin: '2px';
+  padding-bottom : '-2px';
+  padding-top: '2px';
+  flex: '1 1 auto';
+  display: 'inline-grid';
+  grid-area: '1/1/2/3';
+  text-align : 'center';
+  justify-content : 'center';
 }
+.css-1s2u09g-control:hover {
+  border: 'none !important'
+} */
 .ant-upload.ant-upload-select.ant-upload-select-text {
   border: 1px solid black;
   padding: 8px;
   margin-bottom: 7px;
   border-radius: 6px;
   text-align: center;
+}
+.Bassss{
+  padding-top: 50px;
 }
 

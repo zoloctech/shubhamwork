@@ -1,21 +1,21 @@
 
 import {API_URL, CREATEDOCTORLOCATION} from '../../../../Apiconst/Apiconst'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
      TextField
-} from "../../../../CommonFieldComponent/FormFields";
+} from '../../../../CommonFieldComponent/FormFields';
 import { 
     Button, 
-} from "@mui/material";
-import { Upload } from "antd";
-import { makeStyles } from "@material-ui/styles";
+} from '@mui/material';
+import { Upload } from 'antd';
+import { makeStyles } from '@material-ui/styles';
 // components
 import { Link as RouterLink , useLocation} from 'react-router-dom';
-import { Formik, Form } from "formik";
+import { Formik, Form } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
-import { useForm } from "react-hook-form";
-import * as Yup from "yup";
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
 
 
 const useStyles = makeStyles(theme => ({
@@ -23,14 +23,14 @@ const useStyles = makeStyles(theme => ({
     //     overflow: 'auto'
     // },
     // submit: {
-    //     top: "17px"
+    //     top: '17px'
     // },
     // avatarpreview: {
-    //     width: "136px",
-    //     height: "131px"
+    //     width: '136px',
+    //     height: '131px'
     // },
     // svg: {
-    //     display: "noneimportant"
+    //     display: 'noneimportant'
     // }
 }))
 
@@ -46,8 +46,8 @@ function CreateDoctorLocation() {
         console.log(values)
           const url = `${API_URL}/${CREATEDOCTORLOCATION}`;
           var bodyFormData = new FormData();
-          bodyFormData.append("name", values.name);
-          bodyFormData.append("section", values.section);
+          bodyFormData.append('name', values.name);
+          bodyFormData.append('section', values.section);
           axios
           .post(url, bodyFormData,
               {
@@ -65,17 +65,17 @@ function CreateDoctorLocation() {
   return (
     <>
           <Formik
-                                        key="one"
+                                        key='one'
                                         enableReinitialize
                                         initialValues={{
-                                            name: "",
-                                            section: "",
+                                            name: '',
+                                            section: '',
                                         }}
                                         validationSchema={Yup.object().shape({
                                             name: Yup.string()
-                                                .required("Name  is required"),
+                                                .required('Name  is required'),
                                                 section: Yup.string()
-                                                .required("Section is required"),
+                                                .required('Section is required'),
                                         
                                         })}
                                         onSubmit={values => {
@@ -89,34 +89,34 @@ function CreateDoctorLocation() {
                                             touched,
                                             values, }) => (
                                             <>
-                                              <div className="content-wrapper">
-        <div className="container-full">
+                                              <div className='content-wrapper'>
+        <div className='container-full'>
           {/* <!-- Content Header (Page header) --> */}
-          <div className="content-header">
-            {/* <div className="d-flex align-items-center"> */}
-              {/* <div className="me-auto"> */}
-                <h4 className="page-title">Patients</h4>
-                {/* <div className="d-inline-block align-items-center"> */}
-                                                <Form key="oneForm">
+          <div className='content-header'>
+            {/* <div className='d-flex align-items-center'> */}
+              {/* <div className='me-auto'> */}
+                <h4 className='page-title'>Patients</h4>
+                {/* <div className='d-inline-block align-items-center'> */}
+                                                <Form key='oneForm'>
                                                  
                                                             <TextField
-                                                                label="Name"
-                                                                type="text"
-                                                                name="name"
-                                                                className="registration_number1"
+                                                                label='Name'
+                                                                type='text'
+                                                                name='name'
+                                                                className='registration_number1'
                                                             />
                                                     
                                                             <TextField
-                                                                label="Section"
-                                                                type="text"
-                                                                name="section"
+                                                                label='Section'
+                                                                type='text'
+                                                                name='section'
                                                             />
                                                      
                                                     <Button
-                                                        type="submit"
+                                                        type='submit'
                                                         fullWidth
-                                                        variant="contained"
-                                                        color="primary"
+                                                        variant='contained'
+                                                        color='primary'
                                                         className={classes.submit}
                                                     >
                                                         ADD

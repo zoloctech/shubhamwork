@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Field, useField } from "formik";
-import { CheckBoxWrapperStyled } from "./Checkbox.style";
-import { ErrorMessage } from "../../ErrorMessage/index";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Field, useField } from 'formik';
+import { CheckBoxWrapperStyled } from './Checkbox.style';
+import { ErrorMessage } from '../../ErrorMessage/index';
 
 export const CheckBox = ({
   label,
@@ -22,12 +22,12 @@ export const CheckBox = ({
   }
   return (
     <CheckBoxWrapperStyled
-      className="checkbox-view1"
+      className='checkbox-view1'
       noMarginBottom={noMarginBottom}
     >
       <Field
         name={name}
-        type="checkbox"
+        type='checkbox'
         checked={value}
         id={name}
         disabled={disabled}

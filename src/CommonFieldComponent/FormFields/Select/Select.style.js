@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { CommonColors, CommonVariables } from "../FormFields.style";
-import { fontSize, colors } from "../../styles/settings";
+import { CommonColors, CommonVariables } from '../FormFields.style';
+import { fontSize, colors } from '../../styles/settings';
 
 const variables = {
-  selectPaddingRight: "4px"
+  selectPaddingRight: '4px'
 };
 
 export function SelectStyle() {
@@ -88,7 +88,7 @@ export function SelectStyle() {
         &__option,
         &__single-value {
           &:before {
-            content: "";
+            content: '';
             border-radius: 4px;
             display: inline-block;
             height: 20px;
@@ -119,7 +119,7 @@ export function SelectStyle() {
       pointer-events: none;
       color: ${CommonColors.labelText};
       opacity: 0.5;
-      ${fontSize("16px", "22px")};
+      ${fontSize('16px', '22px')};
       position: absolute;
       top: 0;
       left: 0;
@@ -133,7 +133,7 @@ export function SelectStyle() {
     &.active label,
     input:focus ~ label,
     input:not(:empty) ~ label {
-      ${fontSize("11px", "15px")};
+      ${fontSize('11px', '15px')};
       transform: translate(18px, ${CommonVariables.labelTranslateY});
       opacity: 1;
     }

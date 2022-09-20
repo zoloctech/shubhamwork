@@ -30,7 +30,7 @@
    
 // `;
 
-// const types = ["Get_Otp_By_Phone","Get_Otp_By_Email"];
+// const types = ['Get_Otp_By_Phone','Get_Otp_By_Email'];
 // function TabGroup() {
 //   const [active, setActive] = useState(types[0]);
 //   console.log(active)
@@ -48,7 +48,7 @@
 //       ))}
 //     </ButtonGroup>
 //     <p />
-//     { active=="Get_Otp_By_Phone"? <GetOtp/> : <GetOtpByEmail/>}
+//     { active=='Get_Otp_By_Phone'? <GetOtp/> : <GetOtpByEmail/>}
   
 //   </>
 // );

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const colors = {
-  color: "rgba(0, 0, 0, 0.6)"
+  color: 'rgba(0, 0, 0, 0.6)'
 };
 
 export const HelpTextWraperStyle = styled.div`

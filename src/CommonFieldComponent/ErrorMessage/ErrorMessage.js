@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { ErrorWrapperStyled } from "./ErrorMessage.style";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { ErrorWrapperStyled } from './ErrorMessage.style';
 
 export const ErrorMessage = ({ error, touched }) =>
   error && touched ? (
-    <ErrorWrapperStyled className="errorlist">{error}</ErrorWrapperStyled>
+    <ErrorWrapperStyled className='errorlist'>{error}</ErrorWrapperStyled>
   ) : null;
 
 ErrorMessage.propTypes = {

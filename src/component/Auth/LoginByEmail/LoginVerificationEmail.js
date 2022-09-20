@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { TextField } from '../../CommonFieldComponent/FormFields';
+import { TextField } from '../../../CommonFieldComponent/FormFields';
 import {
   Grid,
   Typography,
@@ -14,14 +14,15 @@ import { Upload } from 'antd';
 import { makeStyles } from '@material-ui/styles';
 // components
 import { Link as RouterLink, useHistory } from 'react-router-dom';
-import Page from '../../component/Page';
+import Page from '../../../component/Page';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import { SectionWrapperStyled } from './LoginVerificationStyle';
-import { API_URL, VERIFYOTP } from '../../Apiconst/Apiconst';
+// import { SectionWrapperStyled } from './GetOtpFormStyle';
+import { API_URL, VERIFYOTP } from '../../../Apiconst/Apiconst';
+import { SectionWrapperStyled } from '../LoginVerificationStyle';
 
 const useStyles = makeStyles((theme) => ({
   tableOverflow: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LoginVerification() {
+function LoginVerificationEmail() {
   const history = useHistory();
   const success = () => {};
   const classes = useStyles();
@@ -50,7 +51,7 @@ function LoginVerification() {
     var bodyFormData = new FormData();
     bodyFormData.append('section', values.section);
     bodyFormData.append('phone_or_email', values.phone_or_email);
-    bodyFormData.append('phone', values.phone);
+    bodyFormData.append('email', values.email);
     bodyFormData.append('otp', values.otp);
     axios
       .post(url1, bodyFormData, {
@@ -65,32 +66,33 @@ function LoginVerification() {
           // localStorage.setItem('token_key', response.data.response[0].token);
           window.location.href = '/dashboard-user'
         } else {
-          history.push('/verfiy-otp');
+          history.push('/login-verfication-email');
           success(toast.success(response.data.message));
-          
         }
       });
   };
 
+  function clickEvent(first, last) {
+    if (first.value.length) {
+      document.getElementById(last).focus();
+    }
+  }
   return (
     <>
-    {/* <ToastContainer /> */}
+      {/* <ToastContainer /> */}
       <Formik
         key='one'
         enableReinitialize
         initialValues={{
           section: 'login',
-          phone_or_email: 'phone',
-          phone: '',
+          phone_or_email: 'email',
+          email: '',
           otp: '',
         }}
         validationSchema={Yup.object().shape({
-                phone: Yup.string()
-                .required('Email is required'),
-                otp: Yup.string()
-                .required('Otp is required')
+          email: Yup.string().required('Email is required'),
+          otp: Yup.string().required('Otp is required'),
         })}
-
         onSubmit={(values) => {
           onSubmit(values);
           console.log(values);
@@ -98,13 +100,8 @@ function LoginVerification() {
       >
         {({ setFieldValue, touched, values }) => (
           <>
-            {/* <br />
-            <br /> 
-            <br />
-            <br />
-            <br />
-            <br />    <br />
-            <div className='container h-p100'>
+            <SectionWrapperStyled>
+              {/* <div className='container h-p100'>
               <div className='row align-items-center justify-content-md-center h-p100'>
                 <div className='col-12'>
                   <div className='row justify-content-center g-0'>
@@ -112,25 +109,29 @@ function LoginVerification() {
                       <div className='bg-white rounded10 shadow-lg'>
                         <div className='content-top-agile p-20 pb-0'>
                           <h2 className='text-primary'>VERIFY OTP</h2>
-                          {/* <p className='mb-0'>Verify Otp</p>							
+                        
                         </div>
                         <div className='p-40'>
                           <Form key='oneForm'>
                             <div className='form-group'>
                               <div className='input-group mb-3'>
                                 <span className='input-group-text bg-transparent'>
-                                  <i className='ti-lock'></i>
+                                  <i className='ti-email'></i>
                                 </span>
                                 <Field
                                   className='form-control ps-15 bg-transparent'
-                                  placeholder='Enter your phone'
-                                  label='Phone'
+                                  placeholder='Enter your email'
+                                  label='Email'
                                   type='text'
-                                  name='phone'
+                                  name='email'
+                                  
                                 />
+                               
                               </div>
+                              <ErrorMessage name='email'>{ msg => <div style={{ color: 'red' }}>{msg}</div> }</ErrorMessage>
                             </div>
-                            <ErrorMessage name='phone' />
+                            
+                         
 
                             <div className='form-group'>
                               <div className='input-group mb-3'>
@@ -146,12 +147,12 @@ function LoginVerification() {
                                 />
                               </div>
                             </div>
-                            <ErrorMessage name='otp' />
+                            <ErrorMessage name='otp' >{ msg => <div style={{ color: 'red' }}>{msg}</div> }</ErrorMessage>
 
                             <div className='row'>
                             
                               <div className='col-12 text-center'>
-                                <Button
+                                <button
                                   type='submit'
                                   fullWidth
                                   variant='contained'
@@ -159,7 +160,7 @@ function LoginVerification() {
                                   className={classes.submit}
                                 >
                                   ADD
-                                </Button>
+                                </button>
                               </div>
                             </div>
                           </Form>
@@ -194,9 +195,8 @@ function LoginVerification() {
                   </div>
                 </div>
               </div>
-            </div> */}
-            <SectionWrapperStyled>
-            <div class='form_wrapper'>
+            </div>  */}
+              <div class='form_wrapper'>
                 <div class='form_container'>
                   <div class='title_container'>
                     <h2>VERIFICATION</h2>
@@ -210,12 +210,12 @@ function LoginVerification() {
                             <i aria-hidden='true' class='fa fa-envelope'></i>
                           </span>
                           <Field
-                                  placeholder='Enter your phone'
-                                  label='Phone'
-                                  type='text'
-                                  name='phone'
-                                />
-                           <ErrorMessage name='phone'>{ msg => <div style={{ color: 'red' }}>{msg}</div> }</ErrorMessage>
+                            placeholder='Enter your email'
+                            label='Email'
+                            type='text'
+                            name='email'
+                          />
+                           <ErrorMessage name='email'>{ msg => <div style={{ color: 'red' }}>{msg}</div> }</ErrorMessage>
                         </div>
                         <div class='input_field'>
                           {' '}
@@ -244,7 +244,7 @@ function LoginVerification() {
                   </div>
                 </div>
               </div>
-              </SectionWrapperStyled>
+            </SectionWrapperStyled>
           </>
         )}
       </Formik>
@@ -252,4 +252,4 @@ function LoginVerification() {
   );
 }
 
-export default LoginVerification;
+export default LoginVerificationEmail;

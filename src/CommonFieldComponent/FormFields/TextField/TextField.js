@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { Field, useField } from "formik";
-import { TextWrapperStyled } from "./TextField.style";
-import { ErrorMessage } from "../../ErrorMessage/index";
-import HelpText from "../../HelpText/index";
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { Field, useField } from 'formik';
+import { TextWrapperStyled } from './TextField.style';
+import { ErrorMessage } from '../../ErrorMessage/index';
+import HelpText from '../../HelpText/index';
 
 export const TextField = ({
   label,
@@ -23,8 +23,8 @@ export const TextField = ({
   const { onBlur } = field;
   const { value, error, touched } = meta;
   const { setValue } = helpers;
-  let [active, setActive] = useState("inactive");
-  let [labelWidth, setLabelWidth] = useState("inactive");
+  let [active, setActive] = useState('inactive');
+  let [labelWidth, setLabelWidth] = useState('inactive');
   let [showEyeIcon, setShowEyeIcon] = useState(true);
 
   const ref = useRef(null);
@@ -35,7 +35,7 @@ export const TextField = ({
 
   function handleBlur(e) {
     const value = e.target.value;
-    let active = value ? "active" : "inactive";
+    let active = value ? 'active' : 'inactive';
     value ? handleLabelWidth() : setLabelWidth(0);
     setActive(active);
     onBlur(e);
@@ -43,7 +43,7 @@ export const TextField = ({
 
   function handleFocus() {
     handleLabelWidth();
-    setActive("active");
+    setActive('active');
   }
 
   function handleTogglePassword() {
@@ -60,17 +60,17 @@ export const TextField = ({
 
   useEffect(() => {
     if (value) {
-      let active = value ? "active" : "inactive";
+      let active = value ? 'active' : 'inactive';
       handleLabelWidth();
       setActive(active);
     }
   }, [active, name, value]);
 
   return (
-    <TextWrapperStyled
-      className={`${error && touched && "has-error"} ${active} ${className}`}
-    >
-      <div className="field-wrapper">
+ 
+    //  <div className={`${error && touched && 'has-error'} ${active} ${className}`}>
+    
+      <div className='field-wrapper'>
         <Field
           type={type}
           step={step}
@@ -88,26 +88,26 @@ export const TextField = ({
         />
         <label ref={ref} htmlFor={name}>
           {label}
-          {optional && ` (optional)`}
+          {optional && '(optional)'}
         </label>
         {showPasswordToggleButton && (
           <button
-            type="button"
-            className="show-password"
+            type='button'
+            className='show-password'
             onClick={handleTogglePassword}
           >
            
           </button>
         )}
-        <fieldset aria-hidden="true">
+        <fieldset aria-hidden='true'>
           <legend style={{ width: labelWidth }}>
             <span>​</span>
           </legend>
         </fieldset>
       </div>
-      <ErrorMessage error={error} touched={touched} />
-      {helpText && (!error || !touched) && <HelpText text={helpText} />}
-    </TextWrapperStyled>
+      // <ErrorMessage error={error} touched={touched} />
+      // {helpText && (!error || !touched) && <HelpText text={helpText} />}
+      // </div>
   );
 };
 TextField.propTypes = {

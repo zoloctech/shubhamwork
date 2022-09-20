@@ -1,41 +1,41 @@
-import styled, { css } from "styled-components";
-import { CommonVariables, CommonColors } from "../FormFields.style";
+import styled, { css } from 'styled-components';
+import { CommonVariables, CommonColors } from '../FormFields.style';
 
 export const variables = {
-  checkboxHeight: "25px",
-  checkboxWidth: "25px",
-  checkboxPaddingLeft: "19px",
-  checkboxTickPositionLeft: "7px",
-  checkboxTicksize: "10px",
-  checkboxBorderWidth: "1px"
+  checkboxHeight: '25px',
+  checkboxWidth: '25px',
+  checkboxPaddingLeft: '19px',
+  checkboxTickPositionLeft: '7px',
+  checkboxTicksize: '10px',
+  checkboxBorderWidth: '1px'
 };
 
 export const colors = {
-  border: "#c6ccd2",
-  disabledBg: "#f4f5f6",
-  disabledBorder: "#dee2e7",
-  labelText: "#2a2525",
-  labelDisabled: "#707070",
-  checkboxBg: "#fff",
-  checkboxTick: "#000",
-  checkboxTickDisabled: "#707070",
-  focusShadow: "#66afe9",
-  checkboxListViewBg: "rgba(69, 75, 96, 0.5);",
-  checkboxListViewColor: "#fff",
-  checkboxListViewCheckedBg: "#2E307F"
+  border: '#c6ccd2',
+  disabledBg: '#f4f5f6',
+  disabledBorder: '#dee2e7',
+  labelText: '#2a2525',
+  labelDisabled: '#707070',
+  checkboxBg: '#fff',
+  checkboxTick: '#000',
+  checkboxTickDisabled: '#707070',
+  focusShadow: '#66afe9',
+  checkboxListViewBg: 'rgba(69, 75, 96, 0.5);',
+  checkboxListViewColor: '#fff',
+  checkboxListViewCheckedBg: '#2E307F'
 };
 
 export function CheckboxStyle({ noMarginBottom }) {
   return css`
   margin-bottom: 30px;
-  ${noMarginBottom && "margin-bottom : 0"};
+  ${noMarginBottom && 'margin-bottom : 0'};
 
       position: relative;
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         left: -9999px;
       }
     &.checkbox-view {
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         + label {
           position: relative;
           display: inline-flex;
@@ -48,7 +48,7 @@ export function CheckboxStyle({ noMarginBottom }) {
           margin-bottom: 10px;
 
           &:after {
-            content: "";
+            content: '';
             position: absolute;
             display: block;
             left: 0;
@@ -72,7 +72,7 @@ export function CheckboxStyle({ noMarginBottom }) {
               z-index: 1;
                 center center;
               transition: all $transition-time;
-              content: " ";
+              content: ' ';
               display: block;
               width: 12px;
               height: 9px;
@@ -114,7 +114,7 @@ export function CheckboxStyle({ noMarginBottom }) {
         display: flex;
         flex-wrap: wrap;
       }
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         position: absolute;
         left: -9999px;
         opacity: 0;

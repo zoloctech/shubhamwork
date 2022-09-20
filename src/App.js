@@ -1,97 +1,106 @@
-import "./App.css";
-import { Switch } from "react-router-dom";
-import LoginFrom from "./component/Auth/LoginFrom";
-import PublicRoute from "./InnerComponent/Route/PublicRoute";
-import Header from "./CommonComponent/Header/Header";
-import Footer from "./CommonComponent/Footer/Footer";
-import Main from "./InnerComponent/Main";
-import DoctorRegistration from "./CommonComponent/Register/DoctorRegistration/DoctorRegistration";
-import UserRegistration from "./CommonComponent/Register/UserRegistration/UserRegistration";
-import GetOtp from "./component/AuthGetOtp/GetOtp";
-import VerifyOtp from "./component/AuthGetOtp/VerifyOtp";
-import RegistrationFormModal from "./component/AuthGetOtp/Common/RegistrationFormModal";
-import LoginVerification from "./component/Auth/LoginVerification";
+import './App.css';
+import { Switch } from 'react-router-dom';
+import LoginFromEmail from './component/Auth/LoginByEmail/LoginFormEmail';
+import PublicRoute from './InnerComponent/Route/PublicRoute';
+import Header from './CommonComponent/Header/Header';
+import Footer from './CommonComponent/Footer/Footer';
+import Main from './InnerComponent/Main';
+import DoctorRegistration from './CommonComponent/Register/DoctorRegistration/DoctorRegistration';
+import UserRegistration from './CommonComponent/Register/UserRegistration/UserRegistration';
+import GetOtp from './component/AuthGetOtp/GetOtp';
+import VerifyOtp from './component/AuthGetOtp/VerifyOtp';
+import RegistrationFormModal from './component/AuthGetOtp/Common/RegistrationFormModal';
+import LoginVerification from './component/Auth/LoginVerification';
 import TabGroup from './component/AuthGetOtp/Common/TabGroup/TabGroup'
-import VerifyOtpByEmail from "./component/AuthGetOtp/Common/VerifyOtpByEmail";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import GetOtpByEmail from "./component/AuthGetOtp/Common/GetOtpByEmail";
+import VerifyOtpByEmail from './component/AuthGetOtp/Common/VerifyOtpByEmail';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import GetOtpByEmail from './component/AuthGetOtp/Common/GetOtpByEmail';
+import Error from './component/AuthGetOtp/Common/TabGroup/Error';
+import LoginFrom from './component/Auth/LoginFrom';
+import LoginVerificationEmail from './component/Auth/LoginByEmail/LoginVerificationEmail';
 
 function App() {
   return (
     <>
-    <ToastContainer />
+    <ToastContainer toastStyle={{backgroundColor : 'black', color : 'white'}} />
         <PublicRoute
           exact 
-          path={["/modal-register"]}
+          path={['/modal-register']}
           component={Header}
         />
       <Switch>
         <PublicRoute 
         exact 
-        path="/" 
+        path='/' 
         restricted={false}
         component={LoginFrom} 
         />
              <PublicRoute 
         exact 
-        path="/get-otp" 
+        path='/get-otp' 
         restricted={false}
         component={GetOtp} 
         />
               <PublicRoute 
         exact 
-        path="/get-otp-by-mail" 
+        path='/get-otp-by-mail' 
         restricted={false}
         component={GetOtpByEmail} 
         />
          <PublicRoute 
         exact 
-        path="/login-verfication" 
+        path='/login-verfication' 
         restricted={false}
         component={LoginVerification} 
         />
           <PublicRoute 
         exact 
-        path="/login" 
+        path='/login-verfication-email' 
         restricted={false}
-        component={LoginFrom} 
+        component={LoginVerificationEmail} 
+        />
+          <PublicRoute 
+        exact 
+        path='/login' 
+        restricted={false}
+        component={LoginFromEmail} 
         />
         <PublicRoute 
         exact 
-        path="/doctor-registration" 
+        path='/doctor-registration' 
         restricted={false}
         component={DoctorRegistration} 
         />
          <PublicRoute 
         exact 
-        path="/user-registration" 
+        path='/user-registration' 
         restricted={false}
         component={UserRegistration} 
         />
          <PublicRoute 
         exact 
-        path="/verfiy-otp" 
+        path='/verfiy-otp' 
         restricted={false}
         component={VerifyOtp} 
         />
          <PublicRoute 
         exact 
-        path="/verfiy-otp-email" 
+        path='/verfiy-otp-email' 
         restricted={false}
         component={VerifyOtpByEmail} 
         />
-           {/* <PublicRoute 
+           <PublicRoute 
         exact 
-        path="/modal-register" 
+        path='/modal-register' 
         restricted={false}
-        component={RegistrationFormModal} 
-        /> */}
+        component={Error} 
+        />
         <Main />
       </Switch>
       <PublicRoute
           exact
-          path={["/modal-register"]}
+          path={['/modal-register']}
           component={Footer}
         />
       
@@ -100,3 +109,4 @@ function App() {
 }
 
 export default App;
+//  'test': 'react-scripts test',

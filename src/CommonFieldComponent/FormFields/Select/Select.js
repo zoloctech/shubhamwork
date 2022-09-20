@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import Select from "react-select";
-import { useField } from "formik";
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import Select from 'react-select';
+import { useField } from 'formik';
 
-import { SelectWrapperStyled } from "./Select.style";
-import { ErrorMessage } from "../../ErrorMessage";
-import HelpText from "../../HelpText";
+import { SelectWrapperStyled } from './Select.style';
+import { ErrorMessage } from '../../ErrorMessage';
+import HelpText from '../../HelpText';
 
 export const CustomSelect = ({
   label,
@@ -26,8 +26,8 @@ export const CustomSelect = ({
   const [field, meta, helpers] = useField(name);
   const { value, error, touched } = meta;
   const { setValue } = helpers;
-  let [active, setActive] = useState("inactive");
-  let [labelWidth, setLabelWidth] = useState("inactive");
+  let [active, setActive] = useState('inactive');
+  let [labelWidth, setLabelWidth] = useState('inactive');
   const ref = useRef(null);
 
   const onChange = option => {
@@ -49,12 +49,12 @@ export const CustomSelect = ({
 
   function handleFocus() {
     handleLabelWidth();
-    setActive("active");
+    setActive('active');
   }
 
   function handleBlur(value) {
     if (value) {
-      let active = value.length ? "active" : "inactive";
+      let active = value.length ? 'active' : 'inactive';
       value.length ? handleLabelWidth() : setLabelWidth(0);
       setActive(active);
     }
@@ -62,7 +62,7 @@ export const CustomSelect = ({
 
   useEffect(() => {
     if ((isMulti && value && value.length > 0) || (!isMulti && value)) {
-      let active = value ? "active" : "inactive";
+      let active = value ? 'active' : 'inactive';
       handleLabelWidth();
       setActive(active);
     }
@@ -74,7 +74,7 @@ export const CustomSelect = ({
   if (children) {
     len = children.length;
     for (var i = 0; i < len; i++) {
-      if (typeof children[i] === "object") {
+      if (typeof children[i] === 'object') {
         optionsList = [...children];
         break;
       } else {
@@ -86,11 +86,11 @@ export const CustomSelect = ({
     }
   }
 
-  const dot = (color = "#ccc") => ({
-    alignItems: "center",
-    display: "flex",
+  const dot = (color = '#ccc') => ({
+    alignItems: 'center',
+    display: 'flex',
 
-    ":before": {
+    ':before': {
       backgroundColor: color
     }
   });
@@ -110,7 +110,7 @@ export const CustomSelect = ({
         ? optionsList.filter(option => field.value.indexOf(option.value) >= 0)
         : optionsList.find(option => option.value === field.value);
     } else {
-      return isMulti ? [] : "";
+      return isMulti ? [] : '';
     }
   };
 
@@ -118,9 +118,9 @@ export const CustomSelect = ({
     <SelectWrapperStyled
       className={`${className} ${error &&
         touched &&
-        "has-error"} ${active} ${hide && "hide"}`}
+        'has-error'} ${active} ${hide && 'hide'}`}
     >
-      <div className="field-wrapper">
+      <div className='field-wrapper'>
         <Select
           key={`key-${newValue}`}
           id={name}
@@ -130,7 +130,7 @@ export const CustomSelect = ({
           onChange={onChange}
           value={getValue()}
           selected={selected}
-          placeholder=""
+          placeholder=''
           isDisabled={disabled}
           isOptionDisabled={isOptionDisabled}
           onMenuOpen={handleFocus}
@@ -138,16 +138,16 @@ export const CustomSelect = ({
           styles={colorSelect ? colourStyles : {}}
           className={
             colorSelect
-              ? "react-select__container color-select"
-              : "react-select__container"
+              ? 'react-select__container color-select'
+              : 'react-select__container'
           }
-          classNamePrefix="react-select"
+          classNamePrefix='react-select'
         />
         <label name={name} ref={ref}>
           {label}
           {optional && ` (optional)`}
         </label>
-        <fieldset aria-hidden="true">
+        <fieldset aria-hidden='true'>
           <legend style={{ width: labelWidth }}>
             <span>​</span>
           </legend>

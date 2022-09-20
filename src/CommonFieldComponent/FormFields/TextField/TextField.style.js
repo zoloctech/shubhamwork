@@ -1,45 +1,45 @@
-import styled, { css } from "styled-components";
-import { CommonColors, CommonVariables } from "../FormFields.style";
-// import { fontSize } from "../../styles/settings";
+// import styled, { css } from 'styled-components';
+// import { CommonColors, CommonVariables } from '../FormFields.style';
+// // import { fontSize } from '../../styles/settings';
 
-export function TextStyle() {
-  return css`
+// export function TextStyle() {
+//   return css`
     
-    &.has-error {
-      fieldset {
-        border-color: ${CommonColors.errorBorder};
-        border-width: ${CommonVariables.errorBorderWidth};
-      }
+//     &.has-error {
+//       fieldset {
+//         border-color: ${CommonColors.errorBorder};
+//         border-width: ${CommonVariables.errorBorderWidth};
+//       }
 
-      &.active label {
-        color: ${CommonColors.errorText};
-      }
-    }
+//       &.active label {
+//         color: ${CommonColors.errorText};
+//       }
+//     }
 
-    .show-password {
-      position: absolute;
-      right: 30px;
-      z-index: 10;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  `;
-}
+//     .show-password {
+//       position: absolute;
+//       right: 30px;
+//       z-index: 10;
+//       top: 50%;
+//       transform: translateY(-50%);
+//     }
+//   `;
+// }
 
-export const TextWrapperStyled = styled.div`
-  ${TextStyle};
-`;
+// export const TextWrapperStyled = styled.div`
+//   ${TextStyle};
+// `;
 // position: relative;
     // margin-bottom: 44px;
 
-    // input[type="email"],
-    // input[type="number"],
-    // input[type="decimalNumber"],
-    // input[type="password"],
-    // input[type="tel"],
-    // input[type="url"],
-    // input[type="text"],
-    // input[type="search"] {
+    // input[type='email'],
+    // input[type='number'],
+    // input[type='decimalNumber'],
+    // input[type='password'],
+    // input[type='tel'],
+    // input[type='url'],
+    // input[type='text'],
+    // input[type='search'] {
     //   color: ${CommonColors.formInput};
     //   max-width: 100%;
     //   width: 100%;
@@ -74,14 +74,14 @@ export const TextWrapperStyled = styled.div`
     //   }
     // }
 
-    // input[type="number"]::-webkit-inner-spin-button,
-    // input[type="number"]::-webkit-outer-spin-button {
+    // input[type='number']::-webkit-inner-spin-button,
+    // input[type='number']::-webkit-outer-spin-button {
     //   -webkit-appearance: none;
     //   margin: 0;
     // }
 
-    // input[type="decimalNumber"]::-webkit-inner-spin-button,
-    // input[type="decimalNumber"]::-webkit-outer-spin-button {
+    // input[type='decimalNumber']::-webkit-inner-spin-button,
+    // input[type='decimalNumber']::-webkit-outer-spin-button {
     //   -webkit-appearance: none;
     //   margin: 0;
     // }

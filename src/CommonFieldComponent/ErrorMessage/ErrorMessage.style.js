@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const colors = {
-  errorText: "#dd2727"
+  errorText: '#dd2727'
 };
 
 export const ErrorWrapperStyled = styled.div`

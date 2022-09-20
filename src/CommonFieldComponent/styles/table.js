@@ -1,17 +1,17 @@
-import styled, { css } from "styled-components";
-import ReactTable from "react-table";
+import styled, { css } from 'styled-components';
+import ReactTable from 'react-table';
 
-import { hexToRGBA, fontSize, device } from "../styles/settings";
-import rightArrow from "../../assets/images/rightTriangleArrow.svg";
-import leftArrow from "../../assets/images/leftTriangleArrow.svg";
-import arrowDown from "../../assets/images/arrowDown.svg";
-import arrowUp from "../../assets/images/arrowUp.svg";
-import arrowDownSmall from "../../assets/images/arrowDownSmall.svg";
+import { hexToRGBA, fontSize, device } from '../styles/settings';
+import rightArrow from '../../assets/images/rightTriangleArrow.svg';
+import leftArrow from '../../assets/images/leftTriangleArrow.svg';
+import arrowDown from '../../assets/images/arrowDown.svg';
+import arrowUp from '../../assets/images/arrowUp.svg';
+import arrowDownSmall from '../../assets/images/arrowDownSmall.svg';
 
 export const colors = {
-  buttonText: "#000",
-  buttonTextHover: "#454B60",
-  InputBg: "#fff"
+  buttonText: '#000',
+  buttonTextHover: '#454B60',
+  InputBg: '#fff'
 };
 
 function TableStyle() {
@@ -35,14 +35,14 @@ function TableStyle() {
           border-bottom: 1px solid ${props => props.theme.secondary1};
         }
         .rt-th {
-          ${fontSize("13px", "20px")};
+          ${fontSize('13px', '20px')};
           border-right: 0;
           text-align: left;
           text-transform: uppercase;
           padding: 14px 5px;
 
           &.-cursor-pointer div:after {
-              content: "";
+              content: '';
               display: inline-block;
               width: 14px;
               height: 8px;
@@ -88,7 +88,7 @@ function TableStyle() {
       text-transform: uppercase;
 
       .-pagination {
-        ${fontSize("13px", "20px")};
+        ${fontSize('13px', '20px')};
         box-shadow: none;
         padding: 7px 15px;
         border: 0;
@@ -120,7 +120,7 @@ function TableStyle() {
         .-previous {
           .-btn {
             &:before {
-              content: "";
+              content: '';
               display: inline-block;
               width: 8px;
               height: 10px;
@@ -135,7 +135,7 @@ function TableStyle() {
         .-next {
           .-btn {
             &:after {
-              content: "";
+              content: '';
               display: inline-block;
               width: 8px;
               height: 10px;
@@ -177,7 +177,7 @@ function TableStyle() {
           appearance: none;
           background: ${
             colors.InputBg
-          } url("${arrowDownSmall}") no-repeat right 8px center;
+          } url('${arrowDownSmall}') no-repeat right 8px center;
           &::-ms-expand {
           display: none;
           text-transform: uppercase;
@@ -199,8 +199,8 @@ function TableStyle() {
       }
     }
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }

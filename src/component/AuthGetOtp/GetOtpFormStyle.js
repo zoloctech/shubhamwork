@@ -1,5 +1,5 @@
 
-  import style, {css} from "styled-components";
+  import style, {css} from 'styled-components';
 
   function GetOtpFormStyle ()
   {

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Field, useField } from "formik";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Field, useField } from 'formik';
 
-import { UploadFileWrapperStyled } from "./UploadFile.style";
-import { ErrorMessage } from "../../ErrorMessage";
-import ArrowRight from "../../Icons/ArrowRight";
+import { UploadFileWrapperStyled } from './UploadFile.style';
+import { ErrorMessage } from '../../ErrorMessage';
+import ArrowRight from '../../Icons/ArrowRight';
 
 export const UploadFile = ({
   name,
@@ -19,8 +19,8 @@ export const UploadFile = ({
   const [field, meta] = useField(name);
   const { error, touched } = meta;
   const button =
-    variant === "button" ? (
-      <span className="button">
+    variant === 'button' ? (
+      <span className='button'>
         {buttonText}
         <ArrowRight />
       </span>
@@ -28,18 +28,18 @@ export const UploadFile = ({
       <ArrowRight />
     );
 
-  const labelClass = variant === "button" ? "label-button" : "label-icon";
+  const labelClass = variant === 'button' ? 'label-button' : 'label-icon';
 
   return (
     <UploadFileWrapperStyled
-      className="upload-file"
+      className='upload-file'
       fullWidth={buttonFullWidth}
       color={buttonColor}
-      variant="button"
+      variant='button'
     >
       <Field
         id={name}
-        type="file"
+        type='file'
         name={name}
         onChange={e => {
           handleChange(e.currentTarget.files[0]);
@@ -58,7 +58,7 @@ UploadFile.propTypes = {
   name: PropTypes.string.isRequired,
   handleChange: PropTypes.func,
   setFieldValue: PropTypes.func,
-  variant: PropTypes.oneOf(["button", "icon"]),
+  variant: PropTypes.oneOf(['button', 'icon']),
   buttonText: PropTypes.string,
   fullWidth: PropTypes.bool,
   buttonFullWidth: PropTypes.bool,
@@ -66,6 +66,6 @@ UploadFile.propTypes = {
 };
 
 UploadFile.defaultProps = {
-  buttonText: "Upload",
-  buttonColor: "primary"
+  buttonText: 'Upload',
+  buttonColor: 'primary'
 };
